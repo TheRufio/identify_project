@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .registration-form {
+            display: flex;
+            width: 500px;
+            flex-direction: column;
+        }
+        .registration-form input {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .head {
+            text-align: center;
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
+        .words {
+            text-align: left;
+            font-size: 22px;
+        }
+        .error {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(231, 43, 43);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="registration-form" method="POST">
+        {% csrf_token %}
+        <div class="head"> <a href="/main/">Identify</a></div>
+        <div class="words">Логін: </div>
+        <input type="text" name="nickname" value="{{nickname}}">
+        <div class="words">Пароль: </div>
+        <input type="text" name="password" value="{{password}}">
+        <div class="words">Пошта: </div>
+        <input type="text" name="email" value="{{email}}">
+        <input type="submit">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="error">
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </form>
+</body>
+</html>

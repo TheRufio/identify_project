@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ADD8E6; /* Измените цвет на желаемый */
+            padding: 30px;
+        }
+        .navigation {
+            text-align: left;
+            order: 1;
+        }
+        .title {
+            order: 2;
+            width: 100%;
+            text-align: center;
+        }
+        .login {
+            text-align: right;
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navigation">
+            <a href="#">Навігація</a>
+        </div>
+        <div class="title">
+            <h1>Identify</h1>
+            <input type="text" id="search" name="search">
+        </div>
+        <div class="login">
+            <a href="#">Логін</a> <a href="registration">Реєстрація</a>
+        </div>
+    </div>
+</body>
+</html>
